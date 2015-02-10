@@ -8,6 +8,13 @@
 
 #import "ViewController.h"
 
+@interface ViewController ()
+
+@property (weak) IBOutlet NSTextField *urlTextField;
+@property (weak) IBOutlet NSButton *makeCSVButton;
+
+@end
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -20,6 +27,16 @@
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
+}
+
+- (IBAction)makeTheCSV:(NSButton *)sender
+{
+    NSString *urlString = @"http://codeforamerica.org/api/projects";
+    
+    // get the json
+    
+    
+    // more?
 }
 
 @end
