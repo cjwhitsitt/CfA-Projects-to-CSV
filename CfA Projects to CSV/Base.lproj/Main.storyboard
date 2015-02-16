@@ -672,16 +672,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCC-5I-2c4">
-                                <rect key="frame" x="20" y="233" width="46" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cCC-5I-2c4">
+                                <rect key="frame" x="20" y="233" width="31" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="URL" id="nuE-Kv-ApN">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4XJ-BD-YMT">
-                                <rect key="frame" x="353" y="167" width="113" height="32"/>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PuL-U7-93J">
+                                <rect key="frame" x="20" y="203" width="440" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="http://codeforamerica.org/api/projects" drawsBackground="YES" id="cG0-2d-Kvh">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4XJ-BD-YMT">
+                                <rect key="frame" x="361" y="167" width="105" height="32"/>
                                 <buttonCell key="cell" type="push" title="Make CSV" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2w3-4X-QSf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -690,15 +698,48 @@
                                     <action selector="makeTheCSV:" target="XfG-lQ-9wD" id="VlS-8b-qiJ"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PuL-U7-93J">
-                                <rect key="frame" x="20" y="203" width="440" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="http://codeforamerica.org/api/projects" drawsBackground="YES" id="cG0-2d-Kvh">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZm-zh-enM">
+                                <rect key="frame" x="20" y="20" width="440" height="134"/>
+                                <clipView key="contentView" id="4U8-zS-t32">
+                                    <rect key="frame" x="1" y="1" width="223" height="133"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="ZuJ-fH-faE">
+                                            <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="438" height="132"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="438" height="132"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Mlq-1B-cRz">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="7hl-WB-dGz">
+                                    <rect key="frame" x="224" y="1" width="15" height="133"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PuL-U7-93J" secondAttribute="trailing" constant="20" id="5Ev-uK-szQ"/>
+                            <constraint firstItem="PuL-U7-93J" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="H0c-bh-gOh"/>
+                            <constraint firstAttribute="trailing" secondItem="4XJ-BD-YMT" secondAttribute="trailing" constant="20" id="KXc-zt-Cq2"/>
+                            <constraint firstItem="PuL-U7-93J" firstAttribute="top" secondItem="cCC-5I-2c4" secondAttribute="bottom" constant="8" id="LEK-1V-cBX"/>
+                            <constraint firstAttribute="bottom" secondItem="uZm-zh-enM" secondAttribute="bottom" constant="20" id="aM3-gr-00M"/>
+                            <constraint firstItem="cCC-5I-2c4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="22" id="dQ3-ze-TuZ"/>
+                            <constraint firstItem="cCC-5I-2c4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="hCS-pN-LrA"/>
+                            <constraint firstAttribute="trailing" secondItem="uZm-zh-enM" secondAttribute="trailing" constant="20" id="iec-FA-mLH"/>
+                            <constraint firstItem="uZm-zh-enM" firstAttribute="top" secondItem="4XJ-BD-YMT" secondAttribute="bottom" constant="20" id="pa6-hy-5Ih"/>
+                            <constraint firstItem="uZm-zh-enM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="qm6-8a-V2G"/>
+                            <constraint firstItem="4XJ-BD-YMT" firstAttribute="top" secondItem="PuL-U7-93J" secondAttribute="bottom" constant="8" id="uov-xb-r19"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="makeCSVButton" destination="4XJ-BD-YMT" id="RU8-pZ-7Vu"/>
