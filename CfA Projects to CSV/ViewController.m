@@ -16,6 +16,7 @@
 
 @property (nonatomic, weak) IBOutlet NSTextField *urlTextField;
 @property (nonatomic, weak) IBOutlet NSButton *makeCSVButton;
+@property (unsafe_unretained) IBOutlet NSTextView *progressTextView;
 
 @property (nonatomic, strong) NSMutableString *csvString;
 
@@ -88,7 +89,11 @@
         NSDictionary *pages = [responseDictionary objectForKeyNotNull:@"pages"];
         
         NSString *lastPage = [pages objectForKeyNotNull:@"last"];
-        
+        if (lastPage) {
+            [self.progressTextView setString:[NSString stringWithFormat:@"Last page:\n%@", lastPage]];
+        } else {
+            self.progressTextView.string = @"";
+        }
         
         NSString *nextPage = [pages objectForKeyNotNull:@"next"];
         

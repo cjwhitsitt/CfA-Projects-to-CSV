@@ -743,6 +743,7 @@
                     </view>
                     <connections>
                         <outlet property="makeCSVButton" destination="4XJ-BD-YMT" id="RU8-pZ-7Vu"/>
+                        <outlet property="progressTextView" destination="ZuJ-fH-faE" id="g3K-qo-2uP"/>
                         <outlet property="urlTextField" destination="PuL-U7-93J" id="u9a-IN-i4x"/>
                     </connections>
                 </viewController>
